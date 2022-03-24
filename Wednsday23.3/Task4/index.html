@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise #4: Formatting text</title>
+    <style>
+       body{font-size: larger;
+        background-color: #EEEDDE;
+        margin: 0;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .parent {width: 80%;
+            margin: auto;
+        }
+        nav{background-color: #203239;
+            color: white;
+            width: 100%;
+            height: 5vh;
+            margin: 0;
+        }
+        nav h3 {margin: 0;
+            position: relative;
+            left: 10px;
+            top: 3px;
+        }
+        #textarea{margin: 20px 0;
+            width: 50%;
+            
+        }
+        p{
+            font-family:'Courier New', Courier, monospace
+        }
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <h3>Sara Kteifan</h3>
+    </nav>
+    <div class="parent">
+        <select id="fontfamily" onchange="changefontfamily()">
+            <option value="Arial, Helvetica, sans-serif">Arial</option>
+            <option value="'Times New Roman', Times, serif">Times New Roman</option>
+            <option value="'Courier New', Courier, monospace">Courier</option>
+        </select>
+
+        <select id="fontsize" onchange="changefontsize()">
+            <option value="12px">12px</option>
+            <option value="24px">24px</option>
+            <option value="48px">48px</option>
+            <option value="60px">60px</option>
+            <option value="72px">72px</option>
+        </select>
+        
+        <input type="checkbox" id="italic" onclick="italic()">
+        <label for="italic">Italic</label>
+        <input type="checkbox" id="bold" onclick="bold()">
+        <label for="bold">Bold</label>
+        <input type="checkbox" id="underline" onclick="underline()">
+        <label for="underline">Underline</label>
+        <br>
+        <input type="textarea" id="textarea" aria-colindex="">
+        
+
+    </div>
+
+</body>
+<script src="app.js"></script>
+</html>
