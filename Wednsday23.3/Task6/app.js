@@ -1,3 +1,3 @@
 function function1(){
-    document.getElementById(div1p).style.display= "block";
+    document.getElementById("div1p").style.display= "block";
 }

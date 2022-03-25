@@ -7,16 +7,16 @@ let number2 = Number(num2);
 
 switch (operation) {
     case "+": let Addition = number1 + number2 ;
-            console.log(Addition)
+            document.getElementById("result").innerHTML= Addition;
             break;
     case "-": let Subtraction = number1 - number2 ;
-            console.log(Subtraction)
+            document.getElementById("result").innerHTML= Subtraction;
             break;
     case "*": let Multiblication = number1 * number2 ;
-            console.log(Multiblication)
+            document.getElementById("result").innerHTML= Multiblication;
             break;
     case "/": let Division = number1 / number2 ;
-            console.log(Division)
+            document.getElementById("result").innerHTML= Division;
             break;
 }
 
