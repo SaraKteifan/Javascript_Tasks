@@ -7,6 +7,7 @@
 
 
 ///////////Task2
+console.log('Task2:');
 var fruits=["Tomato","Banana","Watermelon"];
 console.log(fruits.indexOf("Banana"));
 console.log(fruits.indexOf("Tomato"));
@@ -20,6 +21,7 @@ let favorite_movie=["Shutter Island", "V for Venditta", "Leon the Proffesional",
 
 
 //////////Task4
+console.log('Task4:');
 function firstOfArray(array){
     return array[0];
 }
@@ -29,6 +31,7 @@ console.log(firstOfArray(["t","u","g","x"]));
 
 
 //////////Task5
+console.log('Task5:');
 function lastOfArray(array){
     return array[array.length-1]
 }
@@ -38,6 +41,7 @@ console.log(lastOfArray(["t","u","g","x"]));
 
 
 //////////Task6
+console.log('Task6:');
 var array = [0,5,7,9];
 array.push(10);
 array.unshift(1,3);
@@ -48,6 +52,7 @@ console.log(array);
 
 
 //////////Task7
+console.log('Task7:');
 var array2 = [5,9,-7,3.5];
 array2.shift();
 array2.pop();
@@ -62,6 +67,7 @@ console.log(array2);
 
 
 //////////Task8
+console.log('Task8:');
 function middleOfArray(array){
     if (array.length % 2 != 0){
         return array[array.length/2-0.5];
@@ -81,6 +87,7 @@ console.log(middleOfArray(["t","u","g","x"]));
 
 
 //////////Task9
+console.log('Task9:');
 var animals=['cat', 'ele', 'bird'];
 console.log(animals)
 animals[0] = 'zebra';
@@ -100,6 +107,7 @@ console.log(nums)
 
 
 //////////Task10
+console.log('Task10:');
 function indexOfArray(array, index){
     return array[index];
 }
@@ -113,6 +121,7 @@ console.log(indexOfArray(nums,10));
 
 
 //////////Task11
+console.log('Task11:');
 function arrayExceptLast(array){
     array.pop();
     return array;
@@ -125,6 +134,7 @@ console.log(arrayExceptLast(array_a));
 
 
 //////////Task12
+console.log('Task12:');
 function addToEnd(array, value){
     array.push(value);
     return array;
@@ -137,6 +147,7 @@ console.log(addToEnd(array_a, 'z'));
 
 
 //////////Task13
+console.log('Task13:');
 //for loop:
 function sumArray(array){
     let l= array.length;
@@ -175,6 +186,7 @@ console.log(sumArray2(ones));
 
 
 //////////Task14
+console.log('Task14:');
 //for loop:
 function minInArray(array){
     let l= array.length;
@@ -213,6 +225,7 @@ console.log(minInArray2(numberrs));
 
 
 //////////Task15
+console.log('Task15:');
 //for loop:
 function removeFromArray(array, element){
     let l = array.length;
@@ -249,15 +262,17 @@ console.log(removeFromArray2(numberrs, 3));
 
 
 //////////Task16
+console.log('Task16:');
 //for loop:
 function oddArray(array){
     let l=array.length;
+    let list= [];
     for(let i=0; i<l; i++){
-        if (array[i] % 2 == 0){
-            array.splice(i,1)
+        if (array[i] % 2 != 0){
+            list.push(array[i])
         }
     }
-    return array;
+    return list;
 }
 
 var nums= [1,2,3,8,9];
@@ -268,14 +283,15 @@ console.log(oddArray(numberrs));
 //while loop:
 function oddArray2(array){
     let L=array.length;
+    let List=[];
     let I=0;
     while(I<L){
-        if (array[I] % 2 == 0){
-            array.splice(I,1)
+        if (array[I] % 2 != 0){
+            List.push(array[I])
         }
     I++
     }
-    return array;
+    return List;
 }
 
 var nums= [1,2,3,8,9];
@@ -285,6 +301,7 @@ console.log(oddArray2(numberrs));
 
 
 //////////Task17
+console.log('Task17:');
 //for loop:
 function aveArray(array){
     let l= array.length;
@@ -323,6 +340,7 @@ console.log(aveArray2(ones));
 
 
 //////////Task18
+console.log('Task18:');
 //for loop:
 function shorterInArray(array){
     let l=array.length;
@@ -361,6 +379,7 @@ console.log(shorterInArray2(fruits));
 
 
 //////////Task19
+console.log('Task19:');
 //for loop:
 function repeatChar(string, char){
     let l= string.length;
@@ -405,4 +424,117 @@ console.log(repeatChar2(myname,"m"));
 
 
 //////////Task20
+console.log('Task20:');
 //for loop:
+function evenIndexOddLength(array){
+    let l= array.length;
+    let list=[];
+    for(let i=0; i<l; i++){
+        let sl= array[i].length;
+        if ((sl % 2 != 0) && (i % 2 == 0)){
+            list.push(array[i]);
+        }
+    }
+    return list;
+}
+
+var strings= ["alex","mercer","madrasa","rashed2","emad","hala"];
+console.log(evenIndexOddLength(strings));
+var myName= ['sara', 'mahmoud', 'kteifan'];
+console.log(evenIndexOddLength(myName));
+
+//while loop:
+function evenIndexOddLength2(array){
+    let L= array.length;
+    let List=[];
+    let I=0;
+    while(I<L){
+        let SL= array[I].length;
+        if ((SL % 2 != 0) && (I % 2 == 0)){
+            List.push(array[I]);
+        }
+        I++;
+    }
+    return List;
+}
+
+var strings= ["alex","mercer","madrasa","rashed2","emad","hala"];
+console.log(evenIndexOddLength2(strings));
+var myName= ['sara', 'mahmoud', 'kteifan'];
+console.log(evenIndexOddLength2(myName));
+
+
+//////////Task21
+console.log('Task21:');
+//for loop:
+function powerElementIndex(array){
+    let l=array.length;
+    let list=[];
+    for (let i=0; i<l; i++){
+        let x= Math.pow(array[i], i);
+        list.push(x);
+    }
+    return list;
+}
+
+var nums= [44, 5, 4, 3, 2, 10];
+console.log(powerElementIndex(nums));
+var nums2= [1,2,3,8,9,77];
+console.log(powerElementIndex(nums2));
+
+//while loop:
+function powerElementIndex2(array){
+    let L= array.length;
+    let List=[];
+    let I=0;
+    while(I<L){
+        let x= Math.pow(array[I], I);
+        List.push(x);
+        I++;
+    }
+    return List;
+}
+
+var nums= [44, 5, 4, 3, 2, 10];
+console.log(powerElementIndex2(nums));
+var nums2= [1,2,3,8,9,77];
+console.log(powerElementIndex2(nums2));
+
+
+//////////Task22
+console.log('Task22:');
+//for loop:
+function evenNumberEvenIndex(array){
+    let l= array.length;
+    let list=[];
+    for(let i=0; i<l; i++){
+        if ((array[i] % 2 == 0) && (i % 2 == 0)){
+            list.push(array[i]);
+        }
+    }
+    return list;
+}
+
+var nums= [5,2,2,1,8,66,55,77,34,9,55,1];
+console.log(evenNumberEvenIndex(nums));
+var numbers= [44, 5, 4, 3, 2, 10];
+console.log(evenNumberEvenIndex(numbers));
+
+//while loop:
+function evenNumberEvenIndex2(array){
+    let L= array.length;
+    let List=[];
+    let I=0;
+    while(I<L){
+        if ((array[I] % 2 == 0) && (I % 2 == 0)){
+            List.push(array[I]);
+        }
+        I++;
+    }
+    return List;
+}
+
+var nums= [5,2,2,1,8,66,55,77,34,9,55,1];
+console.log(evenNumberEvenIndex2(nums));
+var numbers= [44, 5, 4, 3, 2, 10];
+console.log(evenNumberEvenIndex2(numbers));
