@@ -52,12 +52,41 @@ console.log(addKeyAndValue([{name: 'Elie'}, {name: 'Tim'}, {name: 'Matt'}, {name
 
 ////////////////////Task5
 console.log('Task5:----------');
+let obj={};
+    let a= 0;
+    let e= 0;
+    let i= 0;
+    let o= 0;
+    let u= 0;
 function vowelCount(string){
-    string.forEach(element => {
-        let obj={};
-        if (element == 'a' || element == 'A'){
-
-        }
-    });
-    return array;
+    let list=[];
+    for(let i=0; i<string.length; i++){
+        list.push(string[i])
+    }
+    console.log(list);
+    list.forEach(counting());
+function counting(){
+    if (element == 'a' || element == 'A'){
+        obj.a=a+1;
+    }
+    if (element == 'e' || element == 'E'){
+        obj.e=e+1;
+    }
+    if (element == 'i' || element == 'I'){
+        obj.i=i+1;
+    }
+    if (element == 'o' || element == 'O'){
+        obj.o=o+1;
+    }
+    if (element == 'u' || element == 'U'){
+        obj.u=u+1;
+    }
+};
+return obj;
 }
+
+console.log(vowelCount('Elie'));
+console.log(vowelCount('Tim'));
+console.log(vowelCount('Matt'));
+console.log(vowelCount('hmmm'));
+console.log(vowelCount('I Am awesome and so are you'));
