@@ -34,7 +34,7 @@ function firstName(object){
 }
 
 console.log("Task2:", firstName(persons))
-document.getElementById("task2").innerHTML= firstName(persons);
+document.getElementById("task2").innerHTML= JSON.stringify(firstName(persons));
 
 
 ///////////////////////////////////////Task3
@@ -100,39 +100,157 @@ document.getElementById("task5").innerHTML= longestName(persons);
 ///////////////////////////////////////Task7
 function repeatWord(string){
     let x= string.toLowerCase();
+    let obj={};
     let list= x.split(" ");
-    // return list;
     let l=list.length;
-    for (let i=0; i<list; i++){
-        
+    for (let i=0; i<l; i++){
+        let key= obj[list[i]];
+
+        if (key){
+            count=key;
+        }else {
+            count=0;
+        }
+        obj[list[i]]=count+1;
     }
-//     list.forEach(function1());
-    
-// }
-
-// function function1(){
-
-
+    return obj;
 }
 
-
-
-
-console.log(repeatWord("My name is alex mercer class name B baba mama hello Hello HELLO"));
-
-// let x="Hello my name is Sara I am sara My car is pursche ";
-// console.log(x.split(" "));
-
+console.log("Task7:", repeatWord("My name is alex mercer class name B baba mama hello Hello HELLO"));
+document.getElementById("task7").innerHTML= JSON.stringify(repeatWord("My name is alex mercer class name B baba mama hello Hello HELLO"));
 
 ///////////////////////////////////////Task8
-// function repeatChar(string){
+function repeatChar(string){
+    let x= string.toLowerCase();
+    let obj={};
+    let stringChars= x.split("");
+    let l=stringChars.length;
+    for (let i=0; i<l; i++){
+        let key= obj[stringChars[i]];
 
-// }
+        if (key){
+            count=key;
+        }else {
+            count=0;
+        }
+        obj[stringChars[i]]=count+1;
+    }
+    return obj;
+}
+
+console.log("Task8:", repeatChar("mamababatetacedo")); 
+document.getElementById("task8").innerHTML= JSON.stringify(repeatChar("mamababatetacedo"));
 
 
-// x= 'Hello My Name is Sara';
-// y= x.toUpperCase();
-// console.log(x, y)
+///////////////////////////////////////Task9
+function selectFromObject(obj,arr){
+    let newobj={};
+    let objkeys= Object.keys(obj);
+    let objvals=Object.values(obj);
+    let l=objkeys.length;
+    for(let i=0; i<l; i++){
+        for(let j=0; j<arr.length; j++){
+            if(objkeys[i] == arr[j]){
+                newobj[objkeys[i]]=objvals[i];
+            }
+        }
+    }
+    return newobj;
+}
 
-// array=['a', 'b', 'c', 'd', 'f', 'e'];
-// console.log(array.sort());
+console.log("Task9:", selectFromObject({a: 1, cat: 3}, ['a', 'cat', 'd']));
+document.getElementById("task9").innerHTML= JSON.stringify(selectFromObject({a: 1, cat: 3}, ['a', 'cat', 'd']));
+
+
+///////////////////////////////////////Task10
+function objectToArray(obj){
+    let arr=[];
+    let objkeys= Object.keys(obj);
+    let objvals=Object.values(obj);
+    let l=objkeys.length;
+    for(let i=0; i<l; i++){
+        arr.push(objkeys[i]);
+        arr.push(objvals[i]);
+    }
+    return arr; 
+}
+
+ console.log("Task10:",objectToArray({firstName:"Moh",age:24}));
+ document.getElementById("task10").innerHTML= JSON.stringify(objectToArray({firstName:"Moh",age:24}));
+
+ ///////////////////////////////////////Task11
+ function arrayToObject(arr){
+    let obj={};
+    let l= arr.length;
+    for (let i=0; i<l;){
+        obj[arr[i]]=arr[i+1];
+        i+=2;
+    }
+    return obj;
+ }
+
+console.log("Task11:", arrayToObject(["firstName","Moh","age",24]));
+document.getElementById("task11").innerHTML= JSON.stringify(arrayToObject(["firstName","Moh","age",24]));
+
+
+ ///////////////////////////////////////Task12
+ function onlyNumber(obj){
+     let newobj={};
+     let objkeys= Object.keys(obj);
+     let objvals= Object.values(obj);
+     let l= objkeys.length;
+     for (let i=0; i<l;i++){
+         if(typeof(objvals[i]) == 'number'){
+           newobj[objkeys[i]] = objvals[i];
+         }
+     }
+     return newobj;
+ }
+
+console.log("Task12:", onlyNumber({firstName:"Moh",age:24,movies:[1,5,"string"]})); 
+document.getElementById("task12").innerHTML= JSON.stringify(onlyNumber({firstName:"Moh",age:24,movies:[1,5,"string"]}));
+
+
+///////////////////////////////////////Task13
+function onlyString(obj){
+    let newobj={};
+    let objkeys= Object.keys(obj);
+    let objvals= Object.values(obj);
+    let l= objkeys.length;
+    for (let i=0; i<l;i++){
+        if(typeof(objvals[i]) == 'string'){
+          newobj[objkeys[i]] = objvals[i];
+        }
+    }
+    return newobj;
+}
+
+console.log("Task13:", onlyString({firstName:"Moh",age:34,movies:[1,5,"string"]})); 
+document.getElementById("task13").innerHTML= JSON.stringify(onlyString({firstName:"Moh",age:24,movies:[1,5,"string"]}));
+
+
+///////////////////////////////////////Task14
+function onlyArray(obj){
+    let newobj={};
+    let objkeys= Object.keys(obj);
+    let objvals= Object.values(obj);
+    let l= objkeys.length;
+    for (let i=0; i<l;i++){
+        if(Array.isArray(objvals[i])){
+          newobj[objkeys[i]] = objvals[i];
+        }
+    }
+    return newobj;
+}
+
+console.log("Task14:", onlyArray({firstName:"Moh",age:34,movies:[1,5,"string"]})); 
+document.getElementById("task14").innerHTML= JSON.stringify(onlyArray({firstName:"Moh",age:24,movies:[1,5,"string"]}));
+
+///////////////////////////////////////Task15
+function keysArray(obj){
+    let list=Object.keys(obj);
+    return list;
+}
+
+console.log("Task15:", keysArray({firstName:"Moh",age:24,movies:[1,5,"string"]}));
+document.getElementById("task15").innerHTML= JSON.stringify(keysArray({firstName:"Moh",age:24,movies:[1,5,"string"]}));

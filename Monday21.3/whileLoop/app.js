@@ -108,6 +108,94 @@ console.log((muti2(3, 6)));
 
 ////////////////////Task8
 console.log('Task8: ----------');
-function numberBetweenUs(num1, num2){
-    
+function numberBetweenUs(n1, n2){
+    let num1=n1+1;
+    let sum= `${num1}`;
+    while(num1 !== n2-1){
+        sum+= `, ${num1+1}`;
+        num1 ++;
+    }
+    return sum;
 }
+
+console.log(numberBetweenUs(2,8));
+console.log(numberBetweenUs(1,3));
+
+
+////////////////////Tas9
+console.log('Tas9: ----------');
+function countDown(num){
+    let sum= `${num}`;
+    let i=1;
+    while(i != num){
+        sum+= `, ${num-i}`;
+        i++;
+    }
+    if(i==num){
+        sum+= `, done`;
+    }
+    return sum;
+}
+
+console.log(countDown(5));
+console.log(countDown(2));
+console.log(countDown(7));
+
+
+////////////////////Tas10
+console.log('Tas10: ----------');
+function multiplication2(n1,n2){
+    let i=0;
+    let sum= 0;
+    while(i != n2){
+        sum+= n1;
+        i++;
+    }
+    return sum;
+}
+
+console.log(multiplication2(5,4));
+console.log(multiplication2(2,8));
+console.log(multiplication2(7,6));
+
+
+////////////////////Tas11
+console.log('Tas11: ----------');
+function mod2(n1,n2){
+    if(n1<n2){
+        return n1;
+    }
+    let x=n1;
+    while(x>=n2){
+        x-=n2;
+    }
+    return x;
+}
+
+console.log(mod2(5,4));
+console.log(mod2(2,8));
+console.log(mod2(7,4));
+console.log(mod2(8,4));
+
+
+////////////////////Tas12
+console.log('Task12: ----------');
+function repeatChar(string,char){
+    let str= string.toLowerCase();
+    let i=0;
+    let l=string.length;
+    let count=0;
+    while(i<l){
+        if(str[i] == char){
+            count+=1;
+        }
+        i++
+    }
+    return count;
+}
+
+
+console.log(repeatChar("schOol","o"));
+console.log(repeatChar("school","a"));
+console.log(repeatChar("School","s"));
+console.log(repeatChar("Sara","a"));
