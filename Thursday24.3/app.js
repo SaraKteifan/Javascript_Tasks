@@ -98,8 +98,14 @@ document.getElementById("task5").innerHTML= longestName(persons);
 
 
 ///////////////////////////////////////Task7
-// function repeatWord(string){
-//     let list= string.split(" ")
+function repeatWord(string){
+    let x= string.toLowerCase();
+    let list= x.split(" ");
+    // return list;
+    let l=list.length;
+    for (let i=0; i<list; i++){
+        
+    }
 //     list.forEach(function1());
     
 // }
@@ -107,12 +113,12 @@ document.getElementById("task5").innerHTML= longestName(persons);
 // function function1(){
 
 
-// }
+}
 
 
 
 
-// console.log(repeatWord("My name is alex mercer class name B baba mama hello Hello HELLO"));
+console.log(repeatWord("My name is alex mercer class name B baba mama hello Hello HELLO"));
 
 // let x="Hello my name is Sara I am sara My car is pursche ";
 // console.log(x.split(" "));

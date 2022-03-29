@@ -42,7 +42,7 @@ console.log(showFirstAndLast(['hi', 'goodbye', 'smile']));
 console.log('Task4:----------');
 function addKeyAndValue(array, key, value){
     array.forEach(element => {
-        element.key =value;
+        element[key] =value;
     });
     return array;
 }
@@ -52,36 +52,39 @@ console.log(addKeyAndValue([{name: 'Elie'}, {name: 'Tim'}, {name: 'Matt'}, {name
 
 ////////////////////Task5
 console.log('Task5:----------');
-let obj={};
-    let a= 0;
-    let e= 0;
-    let i= 0;
-    let o= 0;
-    let u= 0;
 function vowelCount(string){
+    let obj={};
     let list=[];
-    for(let i=0; i<string.length; i++){
-        list.push(string[i])
+    for(let ind=0; ind<string.length; ind++){
+        list.push(string[ind])
     }
-    console.log(list);
-    list.forEach(counting());
-function counting(){
-    if (element == 'a' || element == 'A'){
-        obj.a=a+1;
-    }
-    if (element == 'e' || element == 'E'){
-        obj.e=e+1;
-    }
-    if (element == 'i' || element == 'I'){
-        obj.i=i+1;
-    }
-    if (element == 'o' || element == 'O'){
-        obj.o=o+1;
-    }
-    if (element == 'u' || element == 'U'){
-        obj.u=u+1;
-    }
-};
+        let a= 0;
+        let e= 0;
+        let i= 0;
+        let o= 0;
+        let u= 0;
+    list.forEach(element => {
+        if (element == 'a' || element == 'A'){
+            a++;
+            obj.a=a;
+        }
+        if (element == 'e' || element == 'E'){
+            e++;
+            obj.e=e;
+        }
+        if (element == 'i' || element == 'I'){
+            i++;
+            obj.i=i;
+        }
+        if (element == 'o' || element == 'O'){
+            o++;
+            obj.o=o;
+        }
+        if (element == 'u' || element == 'U'){
+            u++;
+            obj.u=u;
+        }
+    });
 return obj;
 }
 
