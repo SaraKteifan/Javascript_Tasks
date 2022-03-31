@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reg form</title>
+    <style>
+        body{font-size: larger;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        section {width: 80%;
+            margin: auto;
+        }
+        form {padding: 2%;}
+        fieldset {padding: 2%;}
+        input {margin: 10px;}
+        legend{font-weight: bold;}
+        span {color:red;
+            font-size: medium;
+        }
+        .list {margin-left: 10px;}
+        li {display: none;}
+    </style>
+</head>
+<body>
+    
+    <section>
+        <form>
+            <fieldset>
+                <legend>Resgisteration Form</legend>
+
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" onchange="fnameFun()"> <span id="fname_span"></span>
+                <br>
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" onchange="lnameFun()"> <span id="lname_span"></span>
+                <br>
+                <label for="bdate">Birth Date</label>
+                <input type="date" id="bdate" onchange="dateFun()"> <span id="date_span"></span>
+                <br>
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="test@addres.com" onchange="emailFun()"> <span id="email_span"></span>
+                <br>
+                <label for="email_conf">Confirm Email</label>
+                <input type="email" id="email_conf" onchange="confEmailFun()"> <span id="email_conf_span"></span>
+                <br>
+                <label for="pass">Password</label>
+                <input type="password" id="pass" onchange="passwordFun()"> <span id="password_span"></span>
+                <div class="list">
+                    <span><li id="li1"></li></span>
+                    <span><li id="li2"></li></span>
+                    <span><li id="li3"></li></span>
+                    <span><li id="li4"></li></span>
+                </div>
+                <br>
+                <label for="pass_conf">Confirm Password</label>
+                <input type="password" id="pass_conf">
+                <br>
+                <input type="button" id="btn" value="Submit">
+            </fieldset>
+        </form>
+    </section>
+
+</body>
+<script src="app.js"></script>
+</html>
