@@ -134,7 +134,7 @@ console.log(info);
 function submition(){
 let infoArr= JSON.stringify(info);
 localStorage.setItem('information', infoArr);
-window.location= "2nd page/index.html"
+window.location= "2ndPage/index.html"
 }
 
 
