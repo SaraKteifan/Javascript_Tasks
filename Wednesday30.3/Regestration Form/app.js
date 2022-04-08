@@ -1,12 +1,11 @@
 'use strict'
-
-
-
-
-
-
-let password_conf= document.getElementById('pass_conf').value;
-let button= document.getElementById('btn').value;
+let first_name= document.getElementById('fname').value;
+let last_name= document.getElementById('lname').value;
+let birth_date= document.getElementById('bdate').value;
+let email_= document.getElementById('email').value;
+let password= document.getElementById('pass').value;
+let button= document.getElementById('btn');
+let info=[];
 
 /////////////////////////
 function fnameFun(){
@@ -17,6 +16,7 @@ function fnameFun(){
         document.getElementById('fname_span').innerHTML= "Inavlid name, your name should have only letters";
     }else{
         document.getElementById('fname_span').innerHTML= "";
+        info.push(first_name);
     }
 }
 /////////////////////////
@@ -28,6 +28,7 @@ function lnameFun(){
         document.getElementById('lname_span').innerHTML= "Inavlid name, your name should have only letters";
     }else{
         document.getElementById('lname_span').innerHTML= "";
+        info.push(last_name);
     }
 }
 ////////////////////////
@@ -42,21 +43,27 @@ function dateFun(){
     }
 }
 ////////////////////////
-// function emailFun(){
-//     let email_= document.getElementById('email').value;
-//     console.log(email_);
-//     let email_pattern= /[a-z]|[0-9]@[a-z]\.com$/i;
-//     let test4= email_.search(email_pattern);
-//     if(test4 == -1){
-//         document.getElementById('email_span').innerHTML= "Invalid Email";
-//     }else{
-//         document.getElementById('email_span').innerHTML= "";
+function emailFun(){
+    let email_= document.getElementById('email').value;
+    console.log(email_);
+    let email_pattern1= /^[a-z | 0-9]/i;
+    let email_pattern2= /@/;
+    let email_pattern3= /[a-z].com$/i;
+    let test4_= email_.search(email_pattern1);
+    let test4__= email_.search(email_pattern2);
+    let test4= email_.search(email_pattern3);
+    if(test4_ == -1){
+        document.getElementById('email_span').innerHTML= "Invalid Email, the email should be like that: test@addres.com";
+    }else if(test4__ == -1){
+        document.getElementById('email_span').innerHTML= "Invalid Email the email should be like that: test@addres.com";
+    }else if(test4 == -1){
+        document.getElementById('email_span').innerHTML= "Invalid Email the email should be like that: test@addres.com";
+    }else{
+        document.getElementById('email_span').innerHTML= "";
+        info.push(email_);
+    }
+}
 
-//     }
-// }
-
-// let sara= 'skteif4343an@gmail.com';
-// console.log(sara.search(/([a-z]|[0-9])@[a-z].com$/i));
 ///////////////////////
 function confEmailFun(){
     let email_= document.getElementById('email').value;
@@ -76,8 +83,7 @@ function passwordFun(){
     let test5= password.search(pass_pattern1);
     let test6= password.match(pass_pattern2);
     let test7= password.search(pass_pattern3);
-    console.log(password);
-    if( test5 == -1 || test6.length < 2 || test7 == -1 || (password.length < 8 || password.length > 32)){
+    if( test5 == -1 || test6 == null || test6.length < 2 || test7 == -1 || (password.length < 8 || password.length > 32)){
         document.getElementById('password_span').innerHTML= "Invalid Password";
     }else{
         document.getElementById('password_span').innerHTML= ""; 
@@ -89,7 +95,7 @@ function passwordFun(){
         document.getElementById('li1').style.display='none';
         document.getElementById('li1').innerHTML= ""; 
     }
-    if(test6.length < 2){
+    if(test6 == null || test6.length < 2){
         document.getElementById('li2').style.display='block';
         document.getElementById('li2').innerHTML= "Your password should have at least 2 numbers";
     }else{
@@ -111,6 +117,24 @@ function passwordFun(){
         document.getElementById('li4').innerHTML= ""; 
     }
 }
+/////////////////////////////
+function confPasswordFun(){
+    let password= document.getElementById('pass').value;
+    let password_conf= document.getElementById('pass_conf').value;
+    if (password == password_conf){
+        document.getElementById('password_conf_span').innerHTML= "";
+    }else{
+        document.getElementById('password_conf_span').innerHTML= "The two passwords doesn't match";
+    }
+}
+////////////////////////////
+console.log(info);
 
-// let sara= 'Ss.frarfa';
-// console.log(sara.match(/\d/g));
+////////////////////////////
+function submition(){
+let infoArr= JSON.stringify(info);
+localStorage.setItem('information', infoArr);
+window.location= "2nd page/index.html"
+}
+
+

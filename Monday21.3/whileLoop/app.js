@@ -199,3 +199,124 @@ console.log(repeatChar("schOol","o"));
 console.log(repeatChar("school","a"));
 console.log(repeatChar("School","s"));
 console.log(repeatChar("Sara","a"));
+
+///////////////////////////////Advanced Part/////////////////
+console.log('==========================');
+console.log('Advanced Part');
+console.log('==========================');
+////////////////////Tas1
+console.log('Task1: ----------');
+function fibon(n){
+    if (n == 0)
+    return 1;
+    if (n == 1)
+    return 1;
+    return fibon(n-1)+fibon(n-2);
+
+}
+console.log(fibon(7));
+console.log(fibon(2));
+console.log(fibon(1));
+console.log(fibon(0));
+
+
+////////////////////Tas2
+console.log('Task2: ----------');
+function mirror(string){
+    let i=0;
+    let l=string.length;
+    let newString= '';
+    let arr= string.split('');
+    while(i<l){
+        newString+= arr[l-1-i]
+        i++;
+    }
+    return newString
+}
+
+function mirror2(string){
+    let newString= '';
+    let arr= string.split('');
+    let reversedArr= arr.reverse();
+    newString= reversedArr.join('');
+    return newString;
+}
+
+console.log(mirror("school"));
+console.log(mirror("car"));
+console.log(mirror("maDrasa"));
+console.log(mirror2('=========='));
+console.log(mirror2("school"));
+console.log(mirror2("car"));
+console.log(mirror2("maDrasa"));
+
+
+////////////////////Tas3
+console.log('Task3: ----------');
+function mirrorCaseAlso(string){
+    let arr= string.split('');
+    let l=arr.length;
+    let i=0;
+    while(i<l){
+        if (arr[i].toUpperCase() == arr[i]){
+            arr.splice(i,1,arr[i].toLowerCase())
+        }else{
+            arr.splice(i,1,arr[i].toUpperCase())
+        }
+        i++;
+    }
+    let reversedArr= arr.reverse();
+    let newString= reversedArr.join('');
+    return newString;
+}
+
+console.log(mirrorCaseAlso("sChOol"));
+console.log(mirrorCaseAlso("THOR"));
+console.log(mirrorCaseAlso("BaBa"));
+
+
+////////////////////Tas4
+console.log('Task4: ----------');
+function repeatChar2(string,char){
+    let sum=0;
+    let arr=string.split('');
+    let l=arr.length;
+    let i=0;
+    while(i<l){
+        if(arr[i]==char){
+            sum+=1;
+        }
+        i++;
+    }
+    return sum;
+}
+
+console.log(repeatChar2("schOol","o"));
+console.log(repeatChar2("school","a"));
+console.log(repeatChar2("School","S"));
+console.log(repeatChar2("SArAa","A"));
+
+
+////////////////////Tas5
+console.log('Task5: ----------');
+function welcomeSayHello(num){
+    let i=1; 
+    while(i<=num){
+        if (i==1){
+            console.log(`hi 1`)
+        }
+        if(i>1){
+            let x= '1'
+            for(let j=2; j<(i-1); j++){  
+                x+= `, ${j}`;
+            }
+            if(i>2)
+            x+= ` and ${i-1}`;
+            console.log(`hi ${i} Now Please Say Hello To ${x}`);
+        }
+        i++;
+    }  
+}
+
+welcomeSayHello(3);
+welcomeSayHello(7);
